@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Index</h1>
+    <a href="/about">About</a>
+    <h3>Raw Headers</h3>
+    <ul>
+      <% for(var header in headers) { %>
+        <li><%= header + ': ' + headers[header] %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>

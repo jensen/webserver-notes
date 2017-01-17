@@ -1,0 +1,16 @@
+{
+  "name": "webservers-notes",
+  "version": "1.0.0",
+  "description": "Examples of both node http server and express framework.",
+  "main": "express.js",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karl Jensen",
+  "license": "MIT"
+}
