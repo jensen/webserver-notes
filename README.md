@@ -30,7 +30,7 @@ There are a lot of different types of servers that you currently interact with. 
 * Print Server
 * Web Server
 
-We can connect a machine to a network and run a server applicaiton on it, but there has to be a way for clients to find it. In 1981 the Internet Protocol (IP) specification was released. This document described the information necessary for finding a server as:
+We can connect a machine to a network and run a server application on it, but there has to be a way for clients to find it. In 1981 the Internet Protocol (IP) specification was released. This document described the information necessary for finding a server as:
 
 > A name indicates what we seek. An address indicates where it is. A route indicates how to get there.
 
@@ -44,7 +44,7 @@ The reserved ports for the Hypertext Transfer Protocol (HTTP) are **80** for uns
 
 ### Applications
 
-Apache, IIS (Microsoft) and nginx account for over 75% of the market share for all of the web servers on the internet. 
+Apache, IIS (Microsoft) and nginx account for over 75% of the market share for all of the web servers on the internet.
 
 When you you write an application that understands HTTP then you can configure one of these web servers to pass the requests that they receive to your application on a port you specify.
 
@@ -96,7 +96,7 @@ var express = require('express');
 var app = express();
 ```
 
-All `GET` requests with the path `'/'` will be handled by a function that you define. In this case we send back the content 'Hello World\n' back to the client. 
+All `GET` requests with the path `'/'` will be handled by a function that you define. In this case we send back the content 'Hello World\n' back to the client.
 
 ```javascript
 app.get('/', function(request, response) {
@@ -118,7 +118,7 @@ Now when we run the application we see output in our console.
 
 ### Middleware
 
-Express let's you use middleware to generalize behaviour for certain scenarios. If we want to serve static files (images, html, css, javascript) we can put them in a folder, and then tell Express that it should search there for any request and if it matches a path to a static file then return that. In this example we tell Express than any file in the `public/` directory can be served as static. 
+Express let's you use middleware to generalize behaviour for certain scenarios. If we want to serve static files (images, html, css, javascript) we can put them in a folder, and then tell Express that it should search there for any request and if it matches a path to a static file then return that. In this example we tell Express than any file in the `public/` directory can be served as static.
 
 ```javascript
 app.use(express.static('public'));
