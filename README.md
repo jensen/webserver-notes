@@ -81,7 +81,7 @@ server.listen(port, hostname, function() {
 
 Now when we run the application we see output in our console.
 
-`Server running at http://127.0.0.1:80/`
+`Server running at http://127.0.0.1:3000/`
 
 Please see the `node.js` file for the expanded server that was created during the lecture.
 
