@@ -1,15 +1,15 @@
-var http = require('http');
+const http = require('http');
 
-var hostname = '127.0.0.1';
-var port = 3000;
+const hostname = '127.0.0.1';
+const port = 3000;
 
 var paths = {
-  '/': function(request, response) {
+  '/': (request, response) => {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/plain');
     response.end('Index\n');
   },
-  '/about': function(request, response) {
+  '/about': (request, response) => {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/plain');
     response.end('About\n');
@@ -17,14 +17,14 @@ var paths = {
 }
 
 var errors = {
-  '404': function(request, response) {
+  '404': (request, response) => {
     response.statusCode = 404;
     response.setHeader('Content-Type', 'text/plain');
     response.end('Not Found\n');
   }
 }
 
-var server = http.createServer(function(request, response) {
+var server = http.createServer((request, response) => {
   var path = request.url;
   if(paths.hasOwnProperty(path)) {
     paths[path](request, response);
@@ -33,6 +33,6 @@ var server = http.createServer(function(request, response) {
   }
 });
 
-server.listen(port, hostname, function() {
-  console.log('Server running at http://' + hostname + ':' + port + '/');
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
