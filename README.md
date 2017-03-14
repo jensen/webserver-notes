@@ -1,6 +1,6 @@
 # Web Servers
 
-When I hear the term 'Full Stack' I think of someone who isn't afraid to approach any layer of the technology stack in order to improve the value of the product. Today we focus on a crucial layer of the stack, Web Servers.
+When I hear the term 'Full Stack' I think of someone who can approach any layer of the technology stack in order to improve the value of the product. Today we focus on a crucial layer of the stack, Web Servers. We will start by building a web server using the Node HTTP library and then we can build the same type of server using the Express framework which is built on the Node HTTP library.
 
 ## Project 2 - TinyApp
 
@@ -55,16 +55,16 @@ Today we will build an application using Node and we will run that application o
 Node considers HTTP to be so important that their 'Hello World' example is an HTTP Server that responds with the string 'Hello World'.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-var hostname = '127.0.0.1';
-var port = 3000;
+const hostname = '127.0.0.1';
+const port = 3000;
 ```
 
 We've imported the http module which allows us to create a server. When the server receives a request it calls the function we provide to it. The status code is set to `200 'OK'`, the header that indicates the type of the body is set to `'text/plain'` and then we finish off the response by calling `end()` on the response object with the content `'Hello World\n'`.
 
 ```javascript
-var server = http.createServer(function(request, response) {
+const server = http.createServer((request, response) => {
   response.statusCode = 200;
   response.setHeader('Content-Type', 'text/plain');
   response.end('Hello World\n');
@@ -75,7 +75,7 @@ If we were to run our application it would not run as expected. A server must li
 
 ```javascript
 server.listen(port, hostname, function() {
-  console.log('Server running at http://' + hostname + ':' + port '/');
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -87,7 +87,7 @@ Please see the `node.js` file for the expanded server that was created during th
 
 ## Express Framework
 
-In order to be more efficient when handling requests we can use a Framework called Express. In order to use the module we need to first install it. We can then create a new express instance.
+In order to be more efficient when handling requests we can use a Framework called Express. We can install the module with npm and then create a new express instance.
 
 `npm install --save express`
 
