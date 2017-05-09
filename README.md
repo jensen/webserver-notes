@@ -136,7 +136,7 @@ Embedded JS (EJS) is one of many templating libraries available for use in Expre
 app.set('view engine', 'ejs');
 ```
 
-By default EJS template files are found a `views/` directory. We can create a new `index.ejs` file and return it in a response with the `render()` method.
+By default EJS template files are found in a `views/` directory. We can create a new `index.ejs` file and return it in a response with the `render()` method.
 
 ```javascript
 app.get('/', function(request, response) {
